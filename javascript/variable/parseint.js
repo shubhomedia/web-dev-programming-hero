@@ -20,7 +20,10 @@ var tShirtPrice = 100;
 var tShirtPrice2 = '100';
 var tShirtPrice3 = 100.100;
 var newprice = true;
-console.log(typeof tShirtPrice);
-console.log(typeof tShirtPrice2);
-console.log(typeof tShirtPrice3);
-console.log(typeof newprice);
+// console.log(typeof tShirtPrice);
+// console.log(typeof tShirtPrice2);
+// console.log(typeof tShirtPrice3);
+// console.log(typeof newprice);
+
+var date = new Date();
+console.log(date);
