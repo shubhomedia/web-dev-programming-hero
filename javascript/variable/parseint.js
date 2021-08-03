@@ -26,4 +26,11 @@ var newprice = true;
 // console.log(typeof newprice);
 
 var date = new Date();
-console.log(date);
+// console.log(date);
+
+var price1 = 0.3;
+var price2 = 0.1;
+
+var total = price1 + price2 ;
+total = total.toFixed(5);
+console.log(total);
