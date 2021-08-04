@@ -34,3 +34,7 @@ var price2 = 0.1;
 var total = price1 + price2 ;
 total = total.toFixed(5);
 console.log(total);
+
+var age = 21;
+age +=8;
+console.log(age);
