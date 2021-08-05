@@ -4,3 +4,7 @@ for (var i = 0;i< numbers.length;i++){
     var elements = numbers[i];
     console.log(elements);
 }
+
+var num1 = “99.5”; 
+var num2 = 15; 
+console.log(num1+num2);
