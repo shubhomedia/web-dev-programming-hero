@@ -7,13 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="input-para"></p>
-    <button onclick="textChangePara()">update</button>
+    <p id="clicking-method"></p>
+    <input id="name-field" type="text">
+    <button id="update-name">update</button>
+    <button onclick="handleJustFunctionClick()">Just function</button>
+    <button id="handle-event">direct add Event Listener</button>
     <script>
-        function textChangePara(){
-            const p = document.getElementById('input-para');
+        // using function
+        function handleJustFunctionClick() {
+            const p = document.getElementById('clicking-method');
             p.innerText = 'set by using function';
         }
+        // direct
+        document.getElementById('handle-event').addEventListener('click', function () {
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'set by direct add event listener';
+        })
+        // direct with input field
+        document.getElementById('update-name').addEventListener('click', function () {
+            const nameField = document.getElementById('name-field');
+
+            const p = document.getElementById('clicking-method');
+            p.innerText = nameField.value;
+            nameField.value = '';
+        })
     </script>
 </body>
 </html>
