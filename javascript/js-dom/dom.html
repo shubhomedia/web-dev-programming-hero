@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JS</title>
+</head>
+<body>
+    <header>
+        <h1>Hello DOM</h1>
+    </header>
+    <main>
+        <article><h1>Blog 1</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui tempore, accusantium minus doloremque enim? Quia nesciunt amet facilis atque quas reprehenderit soluta error excepturi! Cumque, maxime saepe! Cupiditate, debitis?</p></article>
+        <article><h1>Blog 2</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui tempore, accusantium minus doloremque enim? Quia nesciunt amet facilis atque quas reprehenderit soluta error excepturi! Cumque, maxime saepe! Cupiditate, debitis?</p></article>
+        <article><h1>Blog 3</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui tempore, accusantium minus doloremque enim? Quia nesciunt amet facilis atque quas reprehenderit soluta error excepturi! Cumque, maxime saepe! Cupiditate, debitis?</p></article>
+        <article><h1>Blog 4</h1><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui tempore, accusantium minus doloremque enim? Quia nesciunt amet facilis atque quas reprehenderit soluta error excepturi! Cumque, maxime saepe! Cupiditate, debitis?</p></article>
+    </main>
+    <script>
+        console.log(document);
+        const allH1 = document.getElementsByTagName('h1');
+        for (const header of allH1){
+            console.log(header.innerText);
+        }
+
+    </script>
+</body>
+</html>
