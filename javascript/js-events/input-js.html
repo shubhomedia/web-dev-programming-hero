@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="input-para"></p>
+    <button onclick="textChangePara()">update</button>
+    <script>
+        function textChangePara(){
+            const p = document.getElementById('input-para');
+            p.innerText = 'set by using function';
+        }
+    </script>
 </body>
 </html>
