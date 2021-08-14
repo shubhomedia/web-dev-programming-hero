@@ -11,5 +11,45 @@
     <button onclick="alert('Hello')">
         Click Me
     </button>
+    <button onclick="document.body.style.backgroundColor='red'"
+    > Background Color Red</button>
+    <button onclick="bgRedColor()"> Onlick Blue</button>
+    <button id="bd-yellow">BG Yellow</button>
+    <button id="make-goldenrod">BG Golden Rod</button>
+    <button id="make-hotpink">BG Hot Pink</button>
+    <button id="light-blue">BG light blue</button>
+    
+    <script>
+        function bgRedColor (){
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        const yellowbtn = document.getElementById('bd-yellow');
+
+        yellowbtn.onclick =yellowbtnfun ;
+        function yellowbtnfun (){
+            document.body.style.backgroundColor = 'yellow';
+        }
+
+        // handle by using add eventlisenter
+        const goldenButton = document.getElementById('make-goldenrod');
+        goldenButton.addEventListener('click', makeGoldenRod);
+
+        function makeGoldenRod() {
+        document.body.style.backgroundColor = 'goldenrod';
+        }
+
+        // addEventListener 
+        const hotPinkButton = document.getElementById('make-hotpink');
+        hotPinkButton.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'hotpink';
+        })
+
+        // direct shortcut
+        document.getElementById('light-blue').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'lightblue';
+        })
+    </script>
+
 </body>
 </html>
