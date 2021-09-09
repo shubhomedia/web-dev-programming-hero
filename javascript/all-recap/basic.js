@@ -12,3 +12,16 @@ else if (salary > 20000) {
 else {
     console.log("Salary between 20000 and 30000");
 }
+
+// Array 
+let number = [10,20,30,40,50,60];
+let numberCount = number.length;
+console.log(numberCount);
+number.pop();
+number.push(100);
+number[4]=111;
+console.log(numberCount);
+console.log(number);
+for( const numbers of number){
+    console.log(numbers);
+}
