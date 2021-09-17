@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Database</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <h2 class="text-center mt-5 pt-4">Search Your Favourite Food!</h2>
+    <!-- Search Area  -->
+    <div class="input-group w-50 mx-auto mt-4">
+        <input id="search-field" type="text" class="form-control" placeholder="Enter Your Food Name" aria-describedby="button-addon2">
+        <button onclick="searchFood()" class="btn btn-outline-primary" type="button" id="button-search">Search</button>
+      </div>
+      <!-- Random Image Area  -->
+    <div id="myDIV" class="text-center">
+        <img class="responsive rounded w-75 mt-4" src="https://source.unsplash.com/collection/190727/1600x900" alt="" srcset="">
+    </div>
+     <!-- Search Result area  -->
+     <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 p-4">
+        
+      </div>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="mealdb.js"></script>
+</body>
+</html>
