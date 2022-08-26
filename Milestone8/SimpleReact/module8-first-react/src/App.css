@@ -43,3 +43,9 @@
   border-radius: 20px;
   border: 10px solid blue;
 }
+
+.programmingLang {
+  background-color: rgb(31, 158, 20);
+  border-radius: 20px;
+  border: 10px solid rgb(202, 4, 37);
+}
