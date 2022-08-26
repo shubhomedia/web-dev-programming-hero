@@ -32,7 +32,14 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.personCard {
+  background-color: salmon;
+  border-radius: 20px;
+  border: 10px solid blue;
 }
