@@ -1,31 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
-const HeroDb = [
-  { name: 'Amir Khan', movie: 'Tare Zamen Par' },
-  { name: 'Salman Khan', movie: 'Tere Naam' },
-  { name: 'Sharuk Khan', movie: 'DDLJ' },
-  { name: 'Anil Kapor', movie: 'Slumdog Millionaire' }
-];
+// const HeroDb = [
+//   { name: 'Amir Khan', movie: 'Tare Zamen Par' },
+//   { name: 'Salman Khan', movie: 'Tere Naam' },
+//   { name: 'Sharuk Khan', movie: 'DDLJ' },
+//   { name: 'Anil Kapor', movie: 'Slumdog Millionaire' }
+// ];
 
 function App() {
   return (
     <div className="App">
-      {
-        HeroDb.map(hero => <ActorName name={hero.name} movie={hero.movie}></ActorName>)
-      }
+      <Counter></Counter>
     </div>
   );
 }
 
-function ActorName(props) {
+function Counter() {
+  const [count, setCount] = useState(0);
+  const handleincrease = () => setCount(count + 1);
+  const handledecrease = () => setCount(count - 1);
+
   return (
-    <div className="actorName">
-      <h1>Actor Name:{props.name}</h1>
-      <h2>Movie Name:{props.movie}</h2>
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleincrease}>Increase</button>
+      <button onClick={handledecrease}>Decrease</button>
     </div>
   )
 }
+
+// function ActorName(props) {
+//   return (
+//     <div className="actorName">
+//       <h1>Actor Name:{props.name}</h1>
+//       <h2>Movie Name:{props.movie}</h2>
+//     </div>
+//   )
+// }
+
+// {
+//   HeroDb.map(hero => <ActorName name={hero.name} movie={hero.movie}></ActorName>)
+// }
 
 // function Person(props) {
 //   console.log(props);
