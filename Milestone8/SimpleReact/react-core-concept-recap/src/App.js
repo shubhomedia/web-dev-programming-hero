@@ -13,11 +13,19 @@ function App() {
 }
 
 function MyComponent(props) {
+  const [points, setPoints] = useState(1)
+
+  const handleclick = () => {
+    const newPoints = points * 2;
+    setPoints(newPoints);
+  }
   return (
     <div className='myComponent'>
       <h1>Hello From Shubho, This is My Component</h1>
       <h2>Job: {props.job}</h2>
       <h2>Title: {props.title}</h2>
+      <h3>Points : {points} </h3>
+      <button onClick={handleclick}>Add Points</button>
     </div>
   );
 }
