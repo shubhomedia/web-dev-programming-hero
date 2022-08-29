@@ -32,7 +32,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.myComponent {
+  color: rgb(32, 5, 135);
+  border: 5px solid rgb(238, 71, 5);
+  margin-bottom: 20px;
 }

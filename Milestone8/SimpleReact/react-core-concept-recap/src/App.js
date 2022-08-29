@@ -5,13 +5,22 @@ import React, { useEffect, useState } from 'react';
 function App() {
   return (
     <div className="App">
-      {/* <Counter></Counter>
-      <LoadComments></LoadComments> */}
-
+      <MyComponent job={'WebDev'} title={'WPDev'}></MyComponent>
+      <MyComponent job={'DBDev'} title={'Laravel'}></MyComponent>
+      <MyComponent job={'ReactJS'} title={'FrontEnd'}></MyComponent>
     </div>
   );
 }
 
+function MyComponent(props) {
+  return (
+    <div className='myComponent'>
+      <h1>Hello From Shubho, This is My Component</h1>
+      <h2>Job: {props.job}</h2>
+      <h2>Title: {props.title}</h2>
+    </div>
+  );
+}
 // function LoadComments() {
 //   const [comments, setcomments] = useState([]);
 //   useEffect(() => {
