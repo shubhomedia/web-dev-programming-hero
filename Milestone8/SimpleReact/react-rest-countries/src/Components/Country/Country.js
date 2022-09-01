@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Country = () => {
+const Country = (props) => {
     return (
-        <div>
-            <h4>Single Country</h4>
-        </div>
+        < div className='country' >
+            <h2>Name: {props.name}</h2>
+            <h3>Capital: {props.capital}</h3>
+            <h4>Population: {props.population}</h4>
+            <img className='flag' src={props.flag}></img>
+        </div >
     );
 };
 
