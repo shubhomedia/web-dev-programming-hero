@@ -12,11 +12,10 @@ const Countries = () => {
         <div>
             <h1>Total Country: {countries.length}</h1>
             {
-                countries.map(country => <Country
-                    name={country.name}
-                    capital={country.capital}
-                    population={country.population}
-                    flag={country.flag}
+                countries.map(listofcountry => <Country
+                    country={listofcountry}
+                    name={listofcountry.name}
+                    capital={listofcountry.capital}
                 ></Country>
                 )
             }

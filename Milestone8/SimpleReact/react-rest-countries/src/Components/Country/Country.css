@@ -1,4 +1,12 @@
+.country {
+    background-color: lightcyan;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 10px;
+}
+
 .country img {
     width: 150px;
-    height: 150px;
+    height: auto;
 }
