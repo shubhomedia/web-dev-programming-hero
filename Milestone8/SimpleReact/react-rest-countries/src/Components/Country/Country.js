@@ -6,6 +6,7 @@ const Country = (props) => {
         < div className='country' >
             {/* <h2>Name: {props.listofcountry.name}</h2> */}
             <h2>Name: {props.name}</h2>
+            <img src={props.flag} alt="" />
             <h4>Capital: {props.capital}</h4>
         </div >
     );
