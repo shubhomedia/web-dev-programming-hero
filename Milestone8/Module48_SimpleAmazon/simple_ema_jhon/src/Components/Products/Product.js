@@ -6,7 +6,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 const element = <FontAwesomeIcon icon={faShoppingCart} />
 
 const Product = (props) => {
-    console.log(props)
     const { name, img, seller, price, stock } = props.product;
     return (
         <div className="product">
