@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Products/Product';
+import { addToDb } from '../../utilities/fakedb';
 import './Shop.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -19,6 +19,8 @@ const Shop = () => {
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
         setCart(newCart);
+        // Save to Local Storage
+        addToDb(product.key);
     }
 
     return (
