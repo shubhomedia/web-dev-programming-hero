@@ -10,19 +10,33 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
+        console.log('Product API Called');
         fetch('./products.json')
             .then(res => res.json())
-            .then(data => setProducts(data))
-
+            .then(data => {
+                setProducts(data);
+                console.log('Products Received');
+            });
     }, [])
 
     useEffect(() => {
-        const savedCart = getStoredCart();
-        for (const key in savedCart) {
-            const addedProduct = products.find(product => product.key === key);
-            console.log(key, addedProduct)
+        console.log('Local Storage Called');
+        if (products.length) {
+            const savedCart = getStoredCart();
+            const storedCart = [];
+            for (const key in savedCart) {
+                console.log(key, savedCart[key]);
+                const addedProduct = products.find(product => product.key === key);
+                if (addedProduct) {
+                    const quantity = savedCart[key];
+                    addedProduct.quantity = quantity;
+                    console.log(addedProduct);
+                    storedCart.push(addedProduct);
+                }
+            }
+            setCart(storedCart);
         }
-    }, [])
+    }, [products])
 
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
