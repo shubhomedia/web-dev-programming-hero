@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import FriendDetail from './Components/FriedDetail/FriendDetail';
 import Culture from './Components/Culture/Culture';
+import PostDetails from './Components/PostDetails/PostDetails';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/about/culture">
             <Culture></Culture>
+          </Route>
+          <Route path="/post/:postId">
+            <PostDetails></PostDetails>
           </Route>
 
           <Route path="*">
