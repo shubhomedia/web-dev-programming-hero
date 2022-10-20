@@ -8,8 +8,10 @@ const gitHubProvider = new GithubAuthProvider();
 
 initailizeAuthentication();
 const auth = getAuth();
+
 function App() {
   const [user, setUser] = useState({})
+
   const handleGoogleSignIn = () => {
 
     signInWithPopup(auth, googleProvider)
