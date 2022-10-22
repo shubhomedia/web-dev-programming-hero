@@ -1,46 +1,57 @@
 import logo from './logo.svg';
-import React, { useState } from 'react';
 import './App.css';
 import {
   MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBCheckbox, MDBIcon
 } from 'mdb-react-ui-kit';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
 import initailizeAuthentication from './Firebase/firebase.init';
-const auth = getAuth();
+import { useState } from 'react';
+
 
 const googleProvider = new GoogleAuthProvider();
 
 initailizeAuthentication();
+const auth = getAuth();
 
 function App() {
-
-  const [user, setUser] = useState({})
-
-  // Google Sign In Code 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({});
 
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        // ...
-      }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+      .then(result => {
+        const { displayName, email, photoURL } = result.user;
+        const loggedInUser = {
+          name: displayName,
+          email: email,
+          photo: photoURL
+        };
+        setUser(loggedInUser);
+      }).catch(error => {
+        console.log(error.message)
       });
   }
 
-  return (
+  const handleRegistration = e => {
+    console.log(email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+    e.preventDefault();
+  }
 
+  const handleEmailChange = e => {
+    setEmail(e.target.value);
+  }
+
+  const handlePasswordChange = e => {
+    setPassword(e.target.value);
+  }
+
+  return (
     <div className="App" >
       <MDBContainer fluid className='p-4 background-radial-gradient overflow-hidden'>
 
@@ -62,12 +73,12 @@ function App() {
             <div id="radius-shape-2" className="position-absolute shadow-5-strong"></div>
             <MDBCard className='my-5 bg-glass'>
               <MDBCardBody className='p-5'>
-                <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email' />
-                <MDBInput wrapperClass='mb-4' label='Password' id='form4' type='password' />
+                <MDBInput onBlur={handleEmailChange} wrapperClass='mb-4' label='Email' id='form3' type='email' required />
+                <MDBInput onBlur={handlePasswordChange} wrapperClass='mb-4' label='Password' id='form4' type='password' required />
                 <div className='d-flex justify-content-center mb-4'>
                   <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
                 </div>
-                <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
+                <MDBBtn onClick={handleRegistration} className='w-100 mb-4' size='md'>sign up</MDBBtn>
                 <MDBBtn className='w-100 mb-4' size='md'>sign In</MDBBtn>
                 <div className="text-center">
                   <p>or sign up with:</p>
@@ -89,7 +100,7 @@ function App() {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-    </div>
+    </div >
   );
 }
 
