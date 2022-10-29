@@ -1,0 +1,21 @@
+[debug] [2022-10-29T13:37:05.032Z] ----------------------------------------------------------------------
+[debug] [2022-10-29T13:37:05.036Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Owes Shubho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-10-29T13:37:05.037Z] CLI Version:   11.15.0
+[debug] [2022-10-29T13:37:05.037Z] Platform:      win32
+[debug] [2022-10-29T13:37:05.037Z] Node Version:  v18.12.0
+[debug] [2022-10-29T13:37:05.039Z] Time:          Sat Oct 29 2022 19:37:05 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-29T13:37:05.039Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-29T13:37:05.055Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-29T13:37:05.056Z] > authorizing via signed-in user (shubhomedia@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\MY_DATA\Projects\FullStackDeveloper\web-dev-programming-hero\Milestone10\Car-Mechanics-module
+
