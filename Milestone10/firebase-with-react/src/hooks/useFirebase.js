@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import initializeAuthentication from "../Firebase/firebase.init"
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 
 
 
@@ -24,6 +24,15 @@ const useFirebase = () => {
             })
 
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                console.log('Insie Stage', user);
+                setUser(user);
+            }
+        })
+    }, []);
 
     return {
         user,
