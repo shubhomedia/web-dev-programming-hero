@@ -37,7 +37,7 @@ const useFirebase = () => {
                 setUser(user);
             }
         })
-    }, [])
+    }, []);
 
 
     return {
