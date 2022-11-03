@@ -16,19 +16,28 @@ const Home = () => {
         const name = nameRef.current.value;
         e.preventDefault();
         const email = emailRef.current.value;
-        e.preventDefault();
+        const newUser = { name: name, email: email }
 
-        const newUser = { name: name, }
         //send data to server
         fetch('http://localhost:5000/users', {
             method: 'post',
             headers: {
-                'content-tyle': 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newUser)
         })
-            .then()
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const addedUser = data;
+                const newUser = [...user, addedUser];
+                setUser(newUser);
+            })
 
+        nameRef.current.value = '';
+        emailRef.current.value = '';
+
+        e.preventDefault();
     }
 
     return (

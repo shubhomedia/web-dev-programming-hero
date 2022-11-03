@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000;
 //     res.send("Hello From Node");
 // }
 app.use(cors());
+app.use(express.json());
 const users = [
     { id: 0, name: 'jamal', email: 'jamal@gmail.com', phone: '01722092395' },
     { id: 1, name: 'kamal', email: 'kamal@gmail.com', phone: '01722092395' },
@@ -21,8 +22,13 @@ app.get('/', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
-    console.log('post hitted');
-    res.send('Post got hitted');
+
+    const newUser = req.body;
+    newUser.id = users.length;
+    users.push(newUser);
+    console.log('post hitted', req.body);
+    // res.send('Post got hitted');
+    res.json(newUser);
 })
 
 app.get('/users', (req, res) => {
