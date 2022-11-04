@@ -9,11 +9,24 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = "mongodb+srv://mydbuser1:W6nd6gwVahaYvzeP@cluster0.cibjvck.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
-    client.close();
-});
+
+async function run() {
+    try {
+        const database = client.db("insertDB");
+        const usersCollection = database.collection("data");
+        // create a document to insert
+        const doc = {
+            title: "Record of a Shriveled Datum",
+            content: "No bytes, no problem. Just insert a document, in MongoDB",
+        }
+        const result = await usersCollection.insertOne(doc);
+        console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    } finally {
+        await client.close();
+    }
+}
+run().catch(console.dir);
+
 
 app.get('/', (req, res) => {
     res.send('Running My Server');
