@@ -12,15 +12,16 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run() {
     try {
-        const database = client.db("insertDB");
-        const usersCollection = database.collection("data");
+        const database = client.db("foodMaster");
+        const usersCollection = database.collection("user");
         // create a document to insert
-        const doc = {
-            title: "Record of a Shriveled Datum",
-            content: "No bytes, no problem. Just insert a document, in MongoDB",
-        }
-        const result = await usersCollection.insertOne(doc);
-        console.log(`A document was inserted with the _id: ${result.insertedId}`);
+
+        // POST API
+        app.post('/users', (req, res) => {
+            console.log('Hitting The Post');
+            res.send('Hit the post');
+        })
+
     } finally {
         await client.close();
     }
