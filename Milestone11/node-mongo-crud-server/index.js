@@ -7,7 +7,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 // Pass : W6nd6gwVahaYvzeP
 
 
-const uri = "mongodb+srv://mydbuser1:<password>@cluster0.cibjvck.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://mydbuser1:W6nd6gwVahaYvzeP@cluster0.cibjvck.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
     const collection = client.db("test").collection("devices");
