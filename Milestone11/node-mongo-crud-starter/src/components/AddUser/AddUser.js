@@ -4,6 +4,7 @@ const AddUser = () => {
 
     const nameRef = useRef();
     const emailRef = useRef();
+
     const handleAddUser = e => {
         const name = nameRef.current.value;
         const email = emailRef.current.value;
