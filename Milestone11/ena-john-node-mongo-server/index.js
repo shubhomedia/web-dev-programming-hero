@@ -54,8 +54,14 @@ async function run() {
 
 
         // Add Order API to Database
+        app.get('/orders', async (req, res) => {
+            const cursor = orderCollection.find({});
+            const orders = await cursor.toArray();
+            res.json(orders);
+        })
         app.post('/orders', async (req, res) => {
             const order = req.body;
+            order.createdAt = new Date();
             const result = await orderCollection.insertOne(order);
             res.json(result);
         })
