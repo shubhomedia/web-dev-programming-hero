@@ -1,9 +1,22 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+var admin = require("firebase-admin");
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 5000;
+
+// firebase admin initialization 
+var serviceAccount = JSON.parse('./ema-john-with-server-connect-firebase-adminsdk-kfwb3-5f5dbe67ad.json');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
+
+
+
+
 
 //MiddleWare
 app.use(cors());
@@ -12,6 +25,20 @@ app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@emajohn.3qnjdkh.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+async function verifyToken(req, res, next) {
+    if (req.headers?.authorization?.startsWith('Bearer ')) {
+        const idToken = req.headers.authorization.split('Bearer ')[1];
+        try {
+            const decodedUser = await admin.auth().verifyIdToken(idToken);
+            req.decodedUserEmail = decodedUser.email;
+        }
+        catch {
+
+        }
+    }
+    next();
+}
 
 async function run() {
     try {
@@ -55,7 +82,12 @@ async function run() {
 
         // Add Order API to Database
         app.get('/orders', async (req, res) => {
-            const cursor = orderCollection.find({});
+            let query = {};
+            const email = req.query.email;
+            if (email) {
+                query = { email: email };
+            }
+            const cursor = orderCollection.find(query);
             const orders = await cursor.toArray();
             res.json(orders);
         })
