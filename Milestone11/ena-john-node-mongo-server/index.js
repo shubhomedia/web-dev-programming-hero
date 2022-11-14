@@ -45,7 +45,6 @@ async function run() {
         await client.connect();
         console.log('Database Connent Succeessfully');
 
-
         const database = client.db('online_shop');
         const productCollection = database.collection('products');
         const orderCollection = database.collection('orders');
