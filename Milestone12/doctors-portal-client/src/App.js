@@ -16,26 +16,23 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            <Route exact path='/'>
-              <Home></Home>
-            </Route>
-            <Route path='/home'>
-              <Home></Home>
-            </Route>
-            <Route path='/login'>
-              <Login></Login>
-            </Route>
-            <Route path='/register'>
-              <Register></Register>
-            </Route>
-            <PrivateRoute path='/appointment'>
-              <Appointment></Appointment>
+            <PrivateRoute path="/appointment">
+              <Appointment />
             </PrivateRoute>
-            <PrivateRoute path='/dashboard'>
-              <Dashboard></Dashboard>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
             </PrivateRoute>
-            <Route path='*'>
-              <NotFound></NotFound>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/">
+              <Home />
             </Route>
           </Switch>
         </Router>

@@ -1,14 +1,12 @@
 import React from 'react';
-import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
+import { Container } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import Service from './../Service/Service';
 import fluoride from '../../../images/fluoride.png';
 import cavity from '../../../images/cavity.png';
 import whitening from '../../../images/whitening.png';
-import Typography from '@mui/material/Typography';
 
 const services = [
     {
@@ -27,6 +25,7 @@ const services = [
         img: whitening
     }
 ]
+
 
 const Services = () => {
     return (
