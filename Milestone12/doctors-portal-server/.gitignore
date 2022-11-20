@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 doctors-portal-firebase-adminsdk.json
-.env
+.env-renameit
 # testing
 /coverage
 
