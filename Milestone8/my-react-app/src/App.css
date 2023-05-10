@@ -1,3 +1,13 @@
+.person {
+  text-align: center;
+  color: rgb(159, 235, 19);
+}
+
+.friend {
+  text-align: center;
+  color: rgb(219, 220, 226);
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +42,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
