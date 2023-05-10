@@ -7,6 +7,7 @@ function App() {
         <h1>React JS API Work</h1>
         <Person></Person>
         <Friend phone="01700000000" address="Dhaka"></Friend>
+        <Friend></Friend>
       </header>
     </div>
   );
