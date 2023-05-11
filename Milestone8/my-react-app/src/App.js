@@ -13,23 +13,24 @@ function App() {
   );
 }
 
-//Create Person Function Component
-function Person() {
-  return (
-    <div className="person">
-      <h3>This is Person Function</h3>
-    </div>
-  );
-}
+// //Create Person Function Component
+// function Person() {
+//   return (
+//     <div className="person">
+//       <h3>This is Person Function</h3>
+//     </div>
+//   );
+// }
 
-//create friend component
-function Friend(props) {
-  return (
-    <div className="friend">
-      <h3>Phone: {props.phone}</h3>
-      <h3>Address: {props.address}</h3>
-    </div>
-  );
-}
+// //create friend component
+// function Friend(props) {
+//   return (
+//     <div className="friend">
+//       <h3>Phone: {props.phone}</h3>
+//       <h3>Address: {props.address}</h3>
+//       <h3>Name: {props.name}</h3>
+//     </div>
+//   );
+// }
 
 export default App;
