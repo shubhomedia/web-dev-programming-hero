@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 
 const data = [{
   "name": "Hannie Aspall",
@@ -51,6 +52,7 @@ function App() {
         {
           data.map(person => <Person name={person.name} job={person.job} salary={person.salary}></Person>)
         }
+        <Counter></Counter>
       </header>
     </div>
   );
@@ -62,7 +64,7 @@ function Person(props) {
     <div className="person">
       <h3>Name : {props.name}</h3>
       <h4>Job : {props.job}</h4>
-      <h5>Salary : {props.salary}</h5>
+      <h5>Salary : ${props.salary}</h5>
     </div>
   );
 }
@@ -77,5 +79,19 @@ function Person(props) {
 //     </div>
 //   );
 // }
+
+//create function counter component
+function Counter() {
+  const [count, setCount] = useState(10);//useState(0) is a function
+  const handleIncrease = () => setCount(count + 10); //setCount(count + 1) is a function
+  const handleDecrease = () => setCount(count - 10); //setCount(count - 1) is a function
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleIncrease}>Increase</button> {/*handleIncrease is a function*/}
+      <button onClick={handleDecrease}>Decrease</button> {/*handleDecrease is a function*/}
+    </div>
+  );
+}
 
 export default App;
