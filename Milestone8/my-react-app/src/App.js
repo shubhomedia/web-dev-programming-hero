@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import CountryNameAndFlag from './Components/CountryNameAndFlag/CountryNameAndFlag';
 
 // const data = [{
 //   "name": "Hannie Aspall",
@@ -47,13 +48,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>React JS API Work</h1>
+        {/* <h1>React JS API Work</h1> */}
         {/* <h2> Total API Data: {data.length}</h2>
         {
           data.map(person => <Person name={person.name} job={person.job} salary={person.salary}></Person>)
         }
         <Counter></Counter> */}
-        <ExternalUsers></ExternalUsers>
+        {/* <ExternalUsers></ExternalUsers> */}
+
+        <CountryNameAndFlag></CountryNameAndFlag>
       </header>
     </div>
   );
