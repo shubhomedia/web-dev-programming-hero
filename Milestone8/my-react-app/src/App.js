@@ -62,20 +62,20 @@ function App() {
   );
 }
 
-function ExternalUsers() {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then(data => setUsers(data));
-  })
-  return (
-    <div>
-      <h2>External Users</h2>
-      <p>{users.length}</p>
-    </div>
-  )
-}
+// function ExternalUsers() {
+//   const [users, setUsers] = useState([]);
+//   useEffect(() => {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then(res => res.json())
+//       .then(data => setUsers(data));
+//   })
+//   return (
+//     <div>
+//       <h2>External Users</h2>
+//       <p>{users.length}</p>
+//     </div>
+//   )
+// }
 
 //Create Person Function Component
 // function Person(props) {
